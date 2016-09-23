@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="mystyle.css" />
+    <title>Calculate an Account Balance</title>
+    <meta charset="utf-8">
+    <!-- Bootstrap 3 is mobile-first -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- .container-fluid spanning the entire width of viewport -->
+    <div class="container-fluid">
+      <!-- jumbotron inside container to NOT extend to edge of screen -->
+      <div class="jumbotron">
+        <h2 class="text-center">Account Balance</h2>
+        <!-- form element defines a form that is used to collect user input -->
+        <form>
+          <div class="form-group">
+            <label for="balance">Balance:</label>
+            <input id="balance" class="form-control" type="number" onclick="computeBalance" placeholder="Enter starting balance" />
+          </div>
+          <div class="form-group">
+            <label for="months">Months:</label>
+            <input id="months" class="form-control" type="number" onclick="computeBalance" placeholder="Enter number of Months" />
+          </div>
+          <!-- Trigger the modal with a button -->
+          <button id="myBtn" type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+            Calculate Balance
+          </button>
+        </form>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">The Balance</h4>
+              </div>
+              <div class="modal-body">
+                <h2 id="outBalance"></h2>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- NOTE: This tag connects the JS to our HTML-->
+    <script src="app.js"></script>
+  </body>
+</html>
